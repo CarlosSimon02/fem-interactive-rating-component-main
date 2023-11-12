@@ -1,0 +1,77 @@
+:root {
+    --clr-primary-1: hsl(216, 12%, 8%);
+    --clr-primary-2: hsl(213, 19%, 18%);
+    --clr-secondary-1: hsl(0, 0%, 100%);
+    --clr-secondary-2: hsl(217, 12%, 63%);
+    --clr-secondary-2: hsl(216, 12%, 54%);
+    --clr-accent: hsl(25, 97%, 53%);
+
+    --ff-primary: 'Overpass', sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* resets */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* utilities */
+body {
+    background-color: var(--clr-primary-1);
+    color: var(--clr-secondary-1);
+    font-family: var(--ff-primary);
+    color: var(--clr-secondary-2)
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    line-height: 1.875rem;
+    color: var(--clr-secondary-1);
+}
+
+.card {
+    background-color: var(--clr-primary-2);
+    border-radius: .9375rem;
+    padding: 1.5rem;
+}
