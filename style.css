@@ -60,6 +60,12 @@ h6 {
     overflow-wrap: break-word;
 }
 
+/* animation */
+@keyframes fade {
+    from {margin-bottom: -5rem; opacity: 0;}
+    to {margin-bottom: 0; opacity: 1;}
+}
+
 /* utilities */
 body {
     background-color: var(--clr-primary-1);
@@ -234,6 +240,7 @@ input[type="submit"]:hover {
     text-align: center;
     padding-top: 2.125rem;
     padding-bottom: 2.3125rem;
+    animation: fade .5s ease-out 1;
 }
 
 .ty-card__image {
