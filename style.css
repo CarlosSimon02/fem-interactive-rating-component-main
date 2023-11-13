@@ -3,13 +3,18 @@
     --clr-primary-2: hsl(213, 19%, 18%);
     --clr-secondary-1: hsl(0, 0%, 100%);
     --clr-secondary-2: hsl(217, 12%, 63%);
-    --clr-secondary-2: hsl(216, 12%, 54%);
+    --clr-secondary-3: hsl(216, 12%, 54%);
     --clr-accent: hsl(25, 97%, 53%);
 
     --ff-primary: 'Overpass', sans-serif;
 
     --fw-regular: 400;
     --fw-bold: 700;
+
+    --bg-gradient: radial-gradient(circle at top,
+                    hsl(215, 20%, 17%), 
+                    hsl(216, 24%, 12%)
+                    );
 }
 
 /* resets */
@@ -58,9 +63,34 @@ h6 {
 /* utilities */
 body {
     background-color: var(--clr-primary-1);
-    color: var(--clr-secondary-1);
     font-family: var(--ff-primary);
-    color: var(--clr-secondary-2)
+    color: var(--clr-secondary-2);
+    font-size: .875rem;
+    line-height: 1.375rem;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 20.4375rem;
+    margin-inline: auto;
+    background: var(--bg-gradient);
+    border-radius: .9375rem;
+    padding: 1.5rem;
+}
+
+.primary-2 {
+    background: var(--clr-primary-2);
+    border-radius: 99999rem;
 }
 
 h1 {
@@ -70,8 +100,178 @@ h1 {
     color: var(--clr-secondary-1);
 }
 
-.card {
-    background-color: var(--clr-primary-2);
-    border-radius: .9375rem;
-    padding: 1.5rem;
+@media (min-width: 28.75rem) {
+    body {
+        font-size: .9375rem;
+        line-height: 1.5rem;
+    }
+    
+    .card {
+        max-width: 25.75rem;
+        border-radius: 1.875rem;
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+        line-height: 2.1875rem;
+    }
 }
+
+/* rating card */
+.rating-card__star {
+    aspect-ratio: 1 / 1;
+    width: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-card__star svg {
+    width: .8725rem;
+    height: auto;
+}
+
+.rating-card h1 {
+    margin-bottom: .625rem;
+}
+
+.rating-card p {
+    margin-bottom: 1.5rem;
+}
+
+.rating-card form {
+    align-self: stretch;
+    display: grid;
+    font-weight: var(--fw-bold);
+    gap: 1.5rem;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    width: 0;
+    opacity: 0;
+    border-style: none;
+    margin-left: -1.25rem;
+}
+
+label {
+    cursor: pointer;
+    width: 2.625rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .5s ease, background-color .5s ease;
+}
+
+label:hover {
+    background-color: var(--clr-secondary-3);
+    color: var(--clr-secondary-1);
+}
+
+input[type="radio"]:checked+label {
+    background-color: var(--clr-accent);
+    color: var(--clr-secondary-1);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    height: 2.8125rem;
+    border-style: none;
+    border-radius: 9999rem;
+    color: var(--clr-secondary-1);
+    background-color: var(--clr-accent);
+    text-transform: uppercase;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: 0.116875rem;
+    transition: color .5s ease, background-color .5s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--clr-secondary-1);
+    color: var(--clr-accent);
+}
+
+@media (min-width: 28.75rem) {
+    .rating-card__star {
+        width: 3rem;
+        margin-bottom: 1.875rem;
+    }
+    
+    .rating-card__star svg {
+        width: 1.046875rem;
+    }
+    
+    .rating-card h1 {
+        margin-bottom: .9375rem;
+    }
+    
+    .rating-card form {
+        gap: 2rem;
+    }
+    
+    label {
+        width: 3.1875rem;
+    }
+    
+    input[type="submit"] {
+        letter-spacing: .125rem;
+    }
+}
+
+/* ty-card */
+.ty-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2.125rem;
+    padding-bottom: 2.3125rem;
+}
+
+.ty-card__image {
+    width: 9rem;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.ty-card__result {
+    padding-inline: .75rem;
+    padding-block: .3125rem;
+    margin-bottom: 1.5rem;
+    color: var(--clr-accent);
+}
+
+.ty-card h1 {
+    margin-bottom: .625rem;
+}
+
+@media (min-width: 28.75rem) {
+    .ty-card {
+        padding-inline: 2.25rem;
+        padding-block: 2.8125rem;
+    }
+    
+    .ty-card__image {
+        width: 10.125rem;
+        margin-bottom: 2rem;
+    }
+    
+    .ty-card__result {
+        padding-inline: 1.25rem;
+        padding-block: .25rem;
+        margin-bottom: 2rem;
+    }
+    
+    .ty-card h1 {
+        margin-bottom: .4375rem;
+    }
+}
+
