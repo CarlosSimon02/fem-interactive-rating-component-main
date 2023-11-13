@@ -26,5 +26,5 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/CarlosSimon02/fem-interactive-rating-component-main](https://github.com/CarlosSimon02/fem-interactive-rating-component-main)
+- Live Site URL: [https://fem-interactive-rating-component-main-carlossimon.vercel.app/](https://fem-interactive-rating-component-main-carlossimon.vercel.app/)
